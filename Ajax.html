@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>Asynchronous Ajax Get request</h1>
+        <script>
+        function run(){
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET",'https://jsonplaceholder.typicode.com/comments/1',true)
+            xhr.onreadystatechange = function (){
+                if(this.readyState == 4 && this.status == 200)
+                {
+                    document.write(this.responseText);
+                    console.log(this.responseText);
+                }
+            }
+            xhr.send(); 
+        }
+        run();
+        </script>
+    </body>
+
+</html>
